@@ -1,11 +1,3 @@
-    
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
-      <h5 class="card-title"> Title{{blogs.blog_title}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{blogs.created_at}}</h6>
-      <p class="card-text">
-        {{blogs.contents}}
-      </p>
-      <a href="#" class="card-link">Read more</a>
-    </div>
-  </div>
+{{#each blogs as |blog|}}
+{{>blog-cards}}
+{{/each}}
