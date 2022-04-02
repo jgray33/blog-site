@@ -3,6 +3,7 @@ const exphbs = require("express-handlebars")
 const path = require("path")
 const routes = require("./controllers/");
 const hbs = exphbs.create({})
+const session = require("express-session")
 
 const sequelize = require("./config/connection");
 
@@ -11,6 +12,14 @@ const PORT = process.env.PORT || 3001;
 
 app.engine("handlebars", hbs.engine)
 app.set("view engine", "handlebars")
+
+const sess = {
+  secret: "secret secret",
+  resave: false,
+  saveUninitialized: true,
+}
+
+app.use(session(sess))
 
 
 app.use(express.json());
