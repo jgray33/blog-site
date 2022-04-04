@@ -1,17 +1,17 @@
 [
-    {
-        "username": "test",
-        "email": "test@test.com",
-        "password": "password"
-          },
-    {
-        "username": "julia",
-        "email": "julia@gmail.com",
-        "password": "password"
-          },
-    {
-        "username": "jgray",
-        "email": "jgray@gmail.com",
-        "password": "password"
-          }
+  {
+    "username": "test",
+    "email": "test@test.com",
+    "password": "password"
+  },
+  {
+    "username": "julia",
+    "email": "julia@gmail.com",
+    "password": "password"
+  },
+  {
+    "username": "jgray",
+    "email": "jgray@gmail.com",
+    "password": "password"
+  }
 ]

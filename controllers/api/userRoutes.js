@@ -16,11 +16,13 @@ router.get("/", async (req, res) => {
 // Create a new user - once created, shows as logged in.
 router.post("/", async (req, res) => {
   try {
-    const newUser = req.body;
-    newUser.password = await bcrypt.hash(req.body.password, 10);
-    const userData = await User.create(newUser);
+        // newUser.password = await bcrypt.hash(req.body.password, 10);
+    const userData = await User.create(req.body);
+
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = userData.id;
+      req.session.loggedIn = true
+      
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -38,6 +40,8 @@ router.post("/login", async (req, res) => {
         })
         console.log(dbUserData);
         console.log(req.body.email)
+
+        
     if (!dbUserData) {
       console.log("no user with that email")
       res.status(400).json({ message: "Incorrect" });

@@ -22,19 +22,28 @@
 
     <div class="col-sm-12 md-6">
       <h1>Sign up</h1>
-      <form>
+      <form class = "signup-form">
         <div class="mb-3">
           <label for="inputUsername" class="form-label">Username</label>
           <input
             type="text"
             class="form-control"
-            id="inputUsername"
+            id="usernameSignup"
+            aria-describedby="usernameHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="emailSignin" class="form-label">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="emailSignup"
             aria-describedby="usernameHelp"
           />
         </div>
         <div class="mb-3">
           <label for="InputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword1" />
+          <input type="password" class="form-control" id="passwordSignup" />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
