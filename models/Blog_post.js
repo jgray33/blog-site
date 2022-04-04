@@ -5,7 +5,7 @@ class Blog_post extends Model {}
 
 Blog_post.init(
   {
-    post_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -18,18 +18,6 @@ Blog_post.init(
     post_contents: {
       type: DataTypes.TEXT,
       allowNull: false,
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "user_id",
-      },
     },
   },
   {
