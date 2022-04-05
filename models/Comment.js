@@ -18,10 +18,10 @@ Comment.init(
   },
   {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "comment",
+    // timestamps: false,
+    // freezeTableName: true,
+    // underscored: true,
+    // modelName: "comment",
   }
 );
 

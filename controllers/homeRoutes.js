@@ -1,9 +1,9 @@
-const Blog_post = require("../models/Blog_post")
+const Blogpost = require("../models/Blogpost")
 
 const router = require("express").Router()
 
 router.get("/", async(req,res)=> {
-        const blogData = await Blog_post.findAll().catch((err) => {
+        const blogData = await Blogpost.findAll().catch((err) => {
             console.log(err)
         })
     const blogs = blogData.map((blog) => blog.get({plain:true}))

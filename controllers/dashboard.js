@@ -1,6 +1,6 @@
 const router = require("express").Router()
-const { Blogpost } = require("../../models")
-const withAuth = require("../../utils/auth")
+const { Blogpost } = require("../models")
+const withAuth = require("../utils/auth")
 
 
 router.get("/", withAuth, async (req,res) => {
@@ -16,3 +16,5 @@ router.get("/", withAuth, async (req,res) => {
         console.log(err)
     }
 })
+
+module.exports = router
