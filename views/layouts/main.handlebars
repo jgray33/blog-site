@@ -24,7 +24,11 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                     <a class="nav-link" href="/dashboard">Dashboard</a>
+                    {{#if logged_in}}
+                    <a class="nav-link" href="/logout">Logout</a>
+                    {{else}}
                     <a class="nav-link" href="/login">Login</a>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -34,4 +38,5 @@
     </main>
 
 </body>
+
 </html>

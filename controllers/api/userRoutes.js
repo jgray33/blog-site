@@ -27,7 +27,7 @@ console.log(req.body, "From sign up route")
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.loggedIn = true
+      req.session.logged_in = true
       req.session.email = userData.email
       
       res.status(200).json(userData);
@@ -61,7 +61,7 @@ router.post("/login", async (req, res) => {
       return;
     }
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
       req.session.user_id = dbUserData.id
       req.session.email = dbUserData.email
       res
