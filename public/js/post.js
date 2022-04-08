@@ -1,4 +1,4 @@
-console.log("connected")
+console.log("connected to post js")
 
 const commentFormHandler = async (event) => {
     console.log("clicked")

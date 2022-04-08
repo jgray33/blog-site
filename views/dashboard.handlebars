@@ -1,1 +1,62 @@
-<div> Hi I am the dashboard</div>
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+            <div class="col-md-9">
+                <div class="card">
+                    <button type="button" class="btn btn-sm btn-primary" id="addNew">Add New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5" id="form">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 border-right">
+                            </div>
+                            <div class="col-md-7">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                           <form>
+                                <div class="form-group row">
+                                    <label for="text" class="col-12 col-form-label">Enter Title here</label>
+                                    <div class="col-12">
+                                        <input id="inputTitle" name="text" placeholder="Enter Title here"
+                                            class="form-control here" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="textarea" class="col-12 col-form-label">Write your post here</label>
+                                    <div class="col-12">
+                                        <textarea id="textarea" name="textarea" cols="40" rows="5"
+                                            class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <button type="button" class="btn btn-primary btn-sm" id="publishBtn">Publish</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<section>
+    Your posts
+    {{#each posts as |post|}}
+    {{>blog-cards}}
+    {{/each}}
+</section>
+
+<script src="./js/dashboard.js"></script>
