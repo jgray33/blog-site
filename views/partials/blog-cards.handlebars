@@ -13,13 +13,11 @@
               </div>
             </div>
             <div class="mt-2">
-              <p class="comment-text">{{post_contents}}</p>
+              <p class="comment-text">{{post_contents}}</p>           
             </div>
           </div>
-                   {{#if logged_in}}
           <div class="bg-white"> 
 <p> {{post.user.username}}</p>
-
           </div>
           <form class="comment-box">
             <div class="bg-light p-2">
@@ -31,7 +29,6 @@
                   Post comment
                 </button>
               </div>
-              {{/if}}
             </div>
           </form>
         </div>
