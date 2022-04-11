@@ -1,13 +1,16 @@
 [
     {
-        "comment_contents": "I'm in disARRAY at this post"
+        "comment_contents": "I'm in disARRAY at this post",
+        "post_id": 1
         
         },
     {
-        "comment_contents": "Super awesome"
+        "comment_contents": "Super awesome",
+        "post_id": 2
         
         },
     {
-        "comment_contents": "Couldn't agree more"
+        "comment_contents": "Couldn't agree more",
+        "post_id": 3
         }
 ]
