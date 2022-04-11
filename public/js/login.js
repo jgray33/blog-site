@@ -1,5 +1,9 @@
 console.log("connected");
 
+const createNewBtn = document.getElementById("createNew")
+
+
+
 const loginFormHandler = async (event) => {
     console.log("clicked")
   event.preventDefault();

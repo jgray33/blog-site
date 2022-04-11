@@ -39,6 +39,9 @@ router.get("/login", async (req, res) => {
   res.render("login");
 });
 
+router.get("/signup", async(req,res)=> {
+  res.render("signup")
+})
 
 
 // Get all the data from user with the say is as the session id
