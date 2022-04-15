@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blogpost, BlogPost } = require("../models");
+const { BlogPost, Comment, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
@@ -16,12 +16,39 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.get("/edit/:id", withAuth, async (req, res) => {
   try {
-    const blogData = await BlogPost.create({
-      post_title: req.body.blogTitle,
-      post_contents: req.body.blogContent,
-      user_id: req.session.user_id,
+    const postData = await BlogPost.findOne({
+      where: {
+        id: req.params.id,
+      },
+      attributes: ["id", "post_title", "post_contents", "user_id", "createdAt"],
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+        {
+          model: Comment,
+          attributes: ["id", "comment_contents", "user_id", "post_id"],
+          include: {
+            model: User,
+            attributes: ["username"],
+          },
+        },
+      ],
+    });
+    if (!postData) {
+      console.log("no post data");
+      return;
+    }
+    // console.log(postData)
+    const post = postData.get({ plain: true });
+    
+        res.render("edit-post", {
+      post,
+      logged_in: true,
+      username: req.session.username,
     });
   } catch (err) {
     console.log(err);

@@ -1,13 +1,17 @@
-<form class="comment-box">
-            <div class="bg-light p-2">
-              <div class="d-flex flex-row align-items-start">
-                <textarea class="form-control ml-1 shadow-none textarea" id="comment-box"></textarea>
-              </div>
-              <div class="mt-2 text-right">
-                <button id="commentID" data-id="{{id}}" type="submit" class="btn btn-primary btn-sm shadow-none">
-                  Post comment
-                </button>
-              </div>
-              {{!-- {{/if}} --}}
-            </div>
-          </form>
+<div class="bg-white p-2">
+  <div class="d-flex flex-row user-info">
+    <div class="d-flex flex-column justify-content-start ml-2">
+      <a href="/dashboard/edit/{{user_id}}"><span
+          class="d-block font-weight-bold name"
+        >
+          {{post.post_title}}
+        </span></a><span class="date text-black-50">
+        {{post.createdAt}}</span>
+      <span class="date text-black-50"> {{post.user.username}}</span>
+    </div>
+  </div>
+  <div class="mt-2">
+    <p class="comment-text">{{post.post_contents}}</p>
+  </div>
+  {{log post}}
+</div>

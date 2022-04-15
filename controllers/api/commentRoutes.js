@@ -16,12 +16,12 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const commentData = await Comment.create({
-      comment_contents: req.body.comment,
+      comment_contents: req.body.comment_content,
       user_id: req.session.user_id,
       post_id: req.body.post_id
     });
-    console.log(commentData);
-    res.status(400).json(commentData);
+    // console.log(commentData);
+    res.status(200).json(commentData);
   } catch (err) {
     res.status(400).json(err);
     console.log(err);
