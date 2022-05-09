@@ -7,8 +7,8 @@
 {{#each post.Comments}}
     <div class="bg-white">
     <div>{{comment_contents}}</div>
-    <div> {{user}}</div>
-    {{log comment_contents}}
+    <div> {{user.username}}</div>
+    {{log user.username}}
   </div>
   {{/each}}
   {{/if}}

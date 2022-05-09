@@ -8,6 +8,12 @@
             </div>
         </div>
     </div>
+    <section>
+    Your posts
+    {{#each posts as |post|}}
+    {{>blog-cards}}
+    {{/each}}
+</section>
 </div>
 
 <div class="container mt-5" id="form">
@@ -52,11 +58,6 @@
 </div>
 
 
-<section>
-    Your posts
-    {{#each posts as |post|}}
-    {{>blog-cards}}
-    {{/each}}
-</section>
+
 
 <script src="./js/dashboard.js"></script>

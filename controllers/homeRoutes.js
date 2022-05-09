@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
       ],
     });
     const posts = blogData.map((post) => post.get({ plain: true }));
+    console.log(posts)
 
     res.render("homepage", {
       posts,
