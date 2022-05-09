@@ -2,10 +2,12 @@
 {{>post-card}}
 
 {{#if post.Comments}}
+{{log post.comments}}
 
 {{#each post.Comments}}
     <div class="bg-white">
     <div>{{comment_contents}}</div>
+    <div> {{user}}</div>
     {{log comment_contents}}
   </div>
   {{/each}}

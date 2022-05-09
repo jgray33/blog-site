@@ -15,13 +15,14 @@ const addNewPost = async (event) => {
   const blogTitle = title.value;
   const blogContent = content.value;
   if (blogTitle && blogContent) {
-    const response = await fetch("/dashboard", {
+    const response = await fetch("api/post", {
       method: "POST",
       body: JSON.stringify({ blogTitle, blogContent }),
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
       console.log("blog posted");
+      document.location.reload()
     } else {
       console.log("That blog didn't post");
     }

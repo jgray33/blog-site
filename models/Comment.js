@@ -15,7 +15,7 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-  },
+      },
   {
     sequelize,
     // timestamps: false,
