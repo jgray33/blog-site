@@ -2,21 +2,26 @@ const router = require("express").Router();
 const { BlogPost, Comment, User } = require("../models");
 const withAuth = require("../utils/auth");
 
+// Get all posts with auth
 router.get("/", withAuth, async (req, res) => {
   try {
-    const blogData = await Blogpost.findAll({
+    const blogData = await BlogPost.findAll({
       where: { user_id: req.session.user_id },
     });
     const posts = blogData.map((blog) => blog.get({ plain: true }));
-    res.render("dashboard", {
+    res.render("all-posts-dashboard", {
       posts,
     });
+    console.log(posts)
   } catch (err) {
     console.log(err);
+    res.redirect("login")
   }
 });
 
-router.get("/edit/:id", withAuth, async (req, res) => {
+// Get one post
+// dashboard/post/id
+router.get("/post/:id", withAuth, async (req, res) => {
   try {
     const postData = await BlogPost.findOne({
       where: {
@@ -43,7 +48,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     // console.log(postData)
     const post = postData.get({ plain: true });
     
-        res.render("edit-post", {
+        res.render("singlePostEditDelete", {
       post,
       logged_in: true,
       username: req.session.username,

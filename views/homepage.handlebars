@@ -1,3 +1,27 @@
-{{#each posts as |post|}}
-{{>blog-cards}}
-{{/each}}
+{{!-- Each blog post --}}
+<div class="headings">
+<h1> The Goss </h1>
+<h3 id="bi-line"> We're all friends here, here's what's really on your mind</h3>
+<br>
+</div>
+<div class="container">
+  {{#each posts}}
+  <div class="box" id="card-container">
+    <div class="content">
+      <div id="card-title">
+      <h5 class=" has-text-centered" id="card-title">{{post_title}}</h5>
+      <p id="username">{{user.username}} {{format_date createdAt}} ~ <a id="readLink" href="/post/{{id}}">
+        Leave a comment
+      </a></p>
+      </div>
+      <div class="block has-text-centered">
+        {{post_contents}}{{comment.length}}
+      </div>
+    </div>
+    <div class="read-more">
+      
+    </div>
+  </div>
+  <br>
+  {{/each}}
+</div>

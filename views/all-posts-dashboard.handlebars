@@ -1,0 +1,44 @@
+
+<h1> Your posts </h1>
+
+
+<div class="container">
+  {{#if posts}}
+  {{#each posts}}
+  <div class="box" id="card-container">
+    <div class="content">
+      <div id="card-title">
+      <a href="/dashboard/post/{{id}}" class=" has-text-centered" id="card-title">{{post_title}}</a>
+      <p id="username">{{user.username}} {{format_date createdAt}}</p>
+      </div>
+      <div class="block has-text-centered">
+        {{post_contents}}{{comment.length}}
+      </div>
+    </div>
+    <div class="read-more">
+      
+    </div>
+  </div>
+  <br>
+  {{/each}}
+  {{else}}
+  <h1> You have no posts yet, why don't you add one? </h1>
+  {{/if}}
+</div>
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+            <div class="col-md-9">
+                <div class="card">
+                    <button type="button" class="btn btn-sm btn-primary" id="addNew">Add New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+</div>
+  
+
+<script src="./js/dashboard.js"></script>

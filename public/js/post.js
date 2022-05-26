@@ -1,4 +1,6 @@
 console.log("connected to post js")
+const deleteBtn = document.querySelector("deleteBtn");
+
 
 const commentFormHandler = async (event) => {
     console.log("clicked")
@@ -23,4 +25,20 @@ if(response.ok) {
  
 }
 
+
+const deletePost = async (event) => {
+    if (event.currentTarget.hasAttribute("data-id")) {
+      const id = event.currentTarget.getElementById("data-id");
+      const response = await fetch(`api/blog-post/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        document.location.replace("/dashboard");
+      } else {
+        console.log("That didn't work.");
+      }
+    }
+  };
+
 document.querySelector(".comment-box").addEventListener("submit", commentFormHandler)
+deleteBtn.addEventListener("click", deletePost);

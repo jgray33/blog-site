@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card">
+  <header class="card-header">
+  </header>
+  <div class="card-content">
+     <div class="content">
+      <textarea class="textarea"id="postTitle">{{post.post_title}}</textarea>
+    </div>
+    <div class="content">
+      <textarea class="textarea" id="newContents">{{post.post_contents}}</textarea>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" data-id={{post.id}} class="card-footer-item editBtn">Save <span class="icon">
+       <i class="fa-solid fa-circle-check"></i>
+      </span></a>
+     <a href="#" data-id={{post.id}} class="card-footer-item deleteBtn">Delete <span class="icon">
+       <i class="fa-solid fa-trash-can"></i>
+      </span></a>
+  </footer>
+</div>
+</div>
+
+<script src="/js/editDelete.js"></script>

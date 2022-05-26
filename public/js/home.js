@@ -1,10 +1,16 @@
 console.log("connected to home js")
 
-// const addCommentBtn = document.querySelector(".addComment")
+const logout = async function() {
+    const response = await fetch('/api/users/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to log out');
+    }
+  };
 
-// function test(event) {
-//     console.log("button clicked")
-
-// }
-
-// addCommentBtn.addEventListener("click", test)
+  document.querySelector('#logout-link').addEventListener('click', logout);
