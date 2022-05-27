@@ -1,11 +1,12 @@
 :root {
   --darkgreen: #648381;
-  --light-green: #e5ebea;
+  --light-green: rgb(229, 235, 234);
   --pink: #ddb8a6;
 }
 
 * {
   font-family: "lato";
+  box-sizing: border-box;
 }
 
 /* Card styling */
@@ -56,7 +57,7 @@
 body {
   font-weight: 600;
   text-align: center !important;
-  }
+}
 
 nav {
   text-transform: uppercase;
@@ -73,9 +74,86 @@ nav {
   color: white;
 }
 
+.btn {
+  background-color: var(--darkgreen);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-.btn{
-    background-color: var(--darkgreen);
-    color: white;
-    font-weight: bold;
+.comment-content {
+  text-align: left;
+  color: gray;
+}
+
+.comment {
+  color: black;
+}
+
+/* Modal */
+
+.myModal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.myModal {
+  background-color: white;
+  width: 600px;
+  max-width: 100%;
+  padding: 30px, 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  pointer-events: none;
+}
+
+.form-group {
+  padding: 5%;
+}
+
+#post-btn, #cancel-btn {
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+
+#modal-heading {
+  margin-top: 3%;
+  font-weight: bolder;
+}
+
+.show {
+  pointer-events: auto;
+  opacity: 1;
+  
+}
+
+#post-title{
+ font-size: larger; 
+}
+
+#wtg-heading{
+  font-size: large;
+  margin-right: 2%;
+  text-decoration: none;
+}
+
+#postTitle{
+  width: 200px;
+  height: 30px;
+}
+
+#newContents{
+  width: 200px;
+  height: 300px;
 }

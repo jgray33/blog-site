@@ -29,7 +29,6 @@ console.log(req.body, "From sign up route")
       req.session.user_id = userData.id;
       req.session.logged_in = true
       req.session.email = userData.email
-      
       res.status(200).json(userData);
     });
   } catch (err) {

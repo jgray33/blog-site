@@ -1,44 +1,75 @@
-
 <h1> Your posts </h1>
+{{!-- Add new post button --}}
+<div class="container mt-5">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-8">
+      <div class="card">
+        <button type="button" class="btn" id="addNew">Add new post</button>
+      </div>
+
+    </div>
+  </div>
+  <section>
+</div>
 
 
+{{!-- All of the posts --}}
 <div class="container">
   {{#if posts}}
   {{#each posts}}
   <div class="box" id="card-container">
     <div class="content">
       <div id="card-title">
-      <a href="/dashboard/post/{{id}}" class=" has-text-centered" id="card-title">{{post_title}}</a>
-      <p id="username">{{user.username}} {{format_date createdAt}}</p>
+        <h2 class=" has-text-centered" id="post-title">{{post_title}}</h2>
+        <p id="username">{{format_date createdAt}}</p>
       </div>
       <div class="block has-text-centered">
         {{post_contents}}{{comment.length}}
       </div>
-    </div>
-    <div class="read-more">
+
+      <div>
+        <a href="/dashboard/post/{{id}}" class="btn" id="post-btn"> Edit your post </a>
+       <hr>
+      </div>
       
     </div>
   </div>
-  <br>
+
   {{/each}}
   {{else}}
-  <h1> You have no posts yet, why don't you add one? </h1>
+  <br>
+  <h3> You have no posts yet, why don't you give us the goss? </h3>
   {{/if}}
 </div>
 
 
-<div class="container mt-5">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-8">
-            <div class="col-md-9">
-                <div class="card">
-                    <button type="button" class="btn btn-sm btn-primary" id="addNew">Add New</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section>
-</div>
-  
 
-<script src="./js/dashboard.js"></script>
+
+{{!-- Modal --}}
+<div class="myModal-container">
+  <div class="myModal">
+    <h1 id="modal-heading"> Add your new post </h1>
+    <form>
+      <div class="form-group ">
+        <label for="text" class="col-12 col-form-label">Enter Title here</label>
+
+        <input id="inputTitle" name="text" placeholder="Enter Title here" class="form-control here" required="required"
+          type="text">
+
+      </div>
+      <div class="form-group">
+        <label for="textarea" class="col-12">Write your post here</label>
+        <div class="col-12">
+          <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
+        </div>
+        <div>
+          <button class="btn" id="post-btn"> Post </button>
+          <button class="btn" id="cancel-btn"> Cancel </button>
+        </div>
+      </div>
+  </div>
+
+
+
+
+  <script src="./js/dashboard.js"></script>

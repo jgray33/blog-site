@@ -15,7 +15,7 @@
          headers: { "Content-Type": "application/json"}, 
      })
      if (response.ok) {
-         document.location.replace('/dashboard');
+         window.location.reload()
          alert("Post updated") 
      } else {
          alert("Didn't work")
@@ -29,7 +29,7 @@ const deletePost = async (event) => {
         method: "DELETE"
     })
     if (response.ok) {
-        document.location.replace("/dashboard")
+        window.location.replace('/dashboard')
         alert("Post deleted")
     } else {
         console.log(response)

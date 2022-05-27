@@ -1,56 +1,58 @@
-  <div class="columns is-centered mt-6">
+<div class="columns is-centered mt-6">
   <div class="column is-6">
-  <section id="singleHero"class="hero">
-  <div class="hero-body">
-    <p data-id={{post.id}} id="postTitle"class="title has-text-centered">
-      {{post.post_title}}
-    </p>
-    <p id="postSub"class="subtitle has-text-centered">
-       <small>by {{post.user.username}}</small> <small>{{post.createdAt}}</small>
-    </p>
-  </div>
-</section>
-<div class="box mt-4">
-  <p> {{post.post_contents}}</p>
-</div>
-</div>
-
-
-{{#if logged_in}}
-{{log logged_in}}
-<form class="commentInput">
-    <div class="bg-light p-2">
-      <div class="d-flex flex-row align-items-start">
-        <textarea class="form-control ml-1 shadow-none textarea" id="comment-box"></textarea>
+    <div class="container">
+      <div class="box" id="card-container">
+        <div class="content">
+          <div id="card-title">
+            <h5 class=" has-text-centered" id="card-title">{{post.post_title}}</h5>
+            <p id="username">{{post.user.username}} {{format_date post.createdAt}} </p>
+          </div>
+          <div class="block has-text-centered">
+            {{post.post_contents}}
+          </div>
+        </div>
+        <div class="read-more">
+        </div>
       </div>
-      <div class="mt-2 text-right">
-        <button id="commentID" data-id="{{post.id}}" type="submit" class="btn btn-primary btn-sm shadow-none">
-          Post comment
-        </button>
+      <br>
+    </div>
+
+    {{#if post.Comments}}
+    {{#each post.Comments}}
+    <div id="theComment" class="box">
+      <div class="comment-content">
+        <p ><strong>{{comment_contents}}</strong></p>
+        <p class="comment"> {{user.username}} ~ {{format_date createdAt}}</p>
+      </div>
+      <div class="content">
+      <hr>
       </div>
     </div>
-  </form>
-  {{/if}}
-
-
-
-{{!-- Comments  --}}
-
-      {{#if post.Comments}}
-     {{#each post.Comments}}
-     <div id="theComment"class="box">
-       <div class="content">
-          <p><strong>User: {{user.username}}</strong></p>
-          <p><strong>Comment: {{comment_contents}}</strong></p>
-       </div>
-      <div class="content">
-          <p>
-                </p> 
+    {{/each}}
+    {{/if}}
+    {{!-- Post new comment  --}}
+    {{#if logged_in}}
+    {{log logged_in}}
+    <form class="commentInput">
+      <div class="bg-light p-2">
+        <div class="d-flex flex-row align-items-start">
+          <textarea class="form-control ml-1 shadow-none textarea" id="comment-box"></textarea>
+        </div>
+        <div class="mt-2 text-right">
+          <button id="commentID" data-id="{{post.id}}" type="submit" class="btn">
+            Post comment
+          </button>
+        </div>
       </div>
-      </div>
-      {{/each}}
-      {{/if}}
-      </div>
+    </form>
+    {{/if}}
+
+
+
+    {{!-- Comments --}}
+
+
+  </div>
   </article>
 </div>
 </div>
