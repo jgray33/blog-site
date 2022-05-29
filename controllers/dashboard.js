@@ -23,7 +23,7 @@ router.get("/", withAuth, async (req, res) => {
 // dashboard/post/id
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
-    console.log("getting here")
+    console.log("getting here");
     const postData = await BlogPost.findOne({
       where: {
         id: req.params.id,
@@ -56,7 +56,9 @@ router.get("/post/:id", withAuth, async (req, res) => {
     res.render("singlePostEditDelete", {
       post,
       logged_in: true,
+      user_id: req.session.user_id,
       username: req.session.username,
+      sessionID,
     });
   } catch (err) {
     console.log(err);

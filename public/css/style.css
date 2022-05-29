@@ -82,13 +82,15 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Comments */
+
 .comment-content {
   text-align: left;
-  color: gray;
+  color: black;
 }
 
 .comment {
-  color: black;
+  color:#D3D3D3
 }
 
 /* Modal */
@@ -140,7 +142,7 @@ nav {
 }
 
 #post-title{
- font-size: larger; 
+ font-size: 20px; 
 }
 
 #wtg-heading{
@@ -169,4 +171,9 @@ nav {
 
 .margin{
   margin-top: 1%;
+}
+
+#single-post-heading {
+  font-size: 20px;
+  font-weight: bolder
 }

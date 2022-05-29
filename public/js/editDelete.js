@@ -15,7 +15,7 @@
          headers: { "Content-Type": "application/json"}, 
      })
      if (response.ok) {
-         window.location.reload()
+        window.location.replace('/dashboard')
          alert("Post updated") 
      } else {
          alert("Didn't work")

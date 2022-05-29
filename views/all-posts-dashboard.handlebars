@@ -6,10 +6,9 @@
       <div class="card">
         <button type="button" class="btn" id="addNew">Add new post</button>
       </div>
-
+        <hr>
     </div>
   </div>
-  <section>
 </div>
 
 
@@ -17,30 +16,29 @@
 <div class="container">
   {{#if posts}}
   {{#each posts}}
-  <div class="box" id="card-container">
+  <div id="card-container">
     <div class="content">
       <div id="card-title">
         <h2 class=" has-text-centered" id="post-title">{{post_title}}</h2>
         <p id="username">{{format_date createdAt}}</p>
       </div>
       <div class="block has-text-centered">
-        {{post_contents}}{{comment.length}}
+        {{post_contents}}
       </div>
-
+      <br>
       <div>
         <a href="/dashboard/post/{{id}}" class="btn">Edit post</a>
-       <hr>
+        <hr>
       </div>
-       </div>
+    </div>
   </div>
-
+  {{!-- If there are no posts post this --}}
   {{/each}}
   {{else}}
   <br>
   <h3> You have no posts yet, why don't you give us the goss? </h3>
   {{/if}}
 </div>
-
 
 
 
@@ -51,10 +49,8 @@
     <form>
       <div class="form-group ">
         <label for="text" class="col-12 col-form-label">Enter Title here</label>
-
         <input id="inputTitle" name="text" placeholder="Enter Title here" class="form-control here" required="required"
           type="text">
-
       </div>
       <div class="form-group">
         <label for="textarea" class="col-12">Write your post here</label>

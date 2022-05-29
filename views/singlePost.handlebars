@@ -1,11 +1,12 @@
+{{!-- The post --}}
 <div class="columns is-centered mt-6">
   <div class="column is-6">
     <div class="container">
-      <div class="box" id="card-container">
+      <div id="card-container">
         <div class="content">
           <div id="card-title">
             <h5 class=" has-text-centered" id="card-title">{{post.post_title}}</h5>
-            <p id="username">{{post.user.username}} {{format_date post.createdAt}} </p>
+            <p class="comment" id="username">{{post.user.username}} {{format_date post.createdAt}} </p>
           </div>
           <div class="block has-text-centered">
             {{post.post_contents}}
@@ -17,22 +18,31 @@
       <br>
     </div>
 
+    {{!-- The comments --}}
+    <h1 id="single-post-heading"> Tell us what you really think:</h1>
     {{#if post.Comments}}
     {{#each post.Comments}}
-    <div id="theComment" class="box">
+    <div>
       <div class="comment-content">
-        <p ><strong>{{comment_contents}}</strong></p>
+        <p><strong>{{comment_contents}}</strong></p>
         <p class="comment"> {{user.username}} ~ {{format_date createdAt}}</p>
-      </div>
-      <div class="content">
-      <hr>
+        {{!-- {{log user_id }}
+        {{log ../../user_id }}
+
+        {{#if (user_match user_Id comment.user_id)}}
+        <button class="btn" data-comment="{{comment.id}}" type="button">
+          Delete your comment
+        </button>
+
+        {{/if}} --}}
+        <hr>
       </div>
     </div>
     {{/each}}
     {{/if}}
-    {{!-- Post new comment  --}}
+
+    {{!-- Post new comment --}}
     {{#if logged_in}}
-    {{log logged_in}}
     <form class="commentInput">
       <div class="bg-light p-2">
         <div class="d-flex flex-row align-items-start">
@@ -46,12 +56,6 @@
       </div>
     </form>
     {{/if}}
-
-
-
-    {{!-- Comments --}}
-
-
   </div>
   </article>
 </div>
