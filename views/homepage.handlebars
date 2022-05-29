@@ -1,9 +1,17 @@
-{{!-- Each blog post --}}
-<div class="headings">
+
+
+{{!-- Header --}}
+<header class="headings">
 <h1> The Goss </h1>
-<h3 id="bi-line"> We're all friends here, here's what's really on your mind</h3>
+<h2 id="bi-line"> We're all friends here, here's what's really on your mind</h2>
 <br>
-</div>
+<section id="go-to-dash"> Go to your dashboard to give us the goss</header>
+        <a href="/dashboard"><button type="submit" class="margin btn">Dashboard</button></a>
+</section>
+</header>
+
+
+{{!-- Each blog post --}}
 <div class="container">
   {{#each posts}}
   <div class="box" id="card-container">

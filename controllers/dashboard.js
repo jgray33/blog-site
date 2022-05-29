@@ -12,10 +12,10 @@ router.get("/", withAuth, async (req, res) => {
     res.render("all-posts-dashboard", {
       posts,
     });
-    console.log(posts)
+    console.log(posts);
   } catch (err) {
     console.log(err);
-    res.redirect("login")
+    res.redirect("login");
   }
 });
 
@@ -23,6 +23,7 @@ router.get("/", withAuth, async (req, res) => {
 // dashboard/post/id
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
+    console.log("getting here")
     const postData = await BlogPost.findOne({
       where: {
         id: req.params.id,
@@ -36,8 +37,12 @@ router.get("/post/:id", withAuth, async (req, res) => {
         {
           model: Comment,
           attributes: ["id", "comment_contents", "user_id", "post_id"],
-          include: [{
-            model: User, attributes: ["username"]}]
+          include: [
+            {
+              model: User,
+              attributes: ["username"],
+            },
+          ],
         },
       ],
     });
@@ -47,8 +52,8 @@ router.get("/post/:id", withAuth, async (req, res) => {
     }
     // console.log(postData)
     const post = postData.get({ plain: true });
-    
-        res.render("singlePostEditDelete", {
+
+    res.render("singlePostEditDelete", {
       post,
       logged_in: true,
       username: req.session.username,

@@ -42,6 +42,7 @@
 #bi-line {
   padding-bottom: 1%;
   border-bottom: 1px solid var(--light-green);
+  font-size: 20px;
 }
 
 /* Nav bar */
@@ -156,4 +157,16 @@ nav {
 #newContents{
   width: 200px;
   height: 300px;
+}
+
+#directions{
+  font-size: 16px;
+}
+
+#go-to-dash{
+  display: inline-block;
+}
+
+.margin{
+  margin-top: 1%;
 }
